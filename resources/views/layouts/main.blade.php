@@ -36,14 +36,15 @@
           <ul class="navbar-nav ml-auto">
             @guest
             <li class="nav-item mr-2"><a href="{{route('login')}}" class="btn btn-outline-secondary">Login</a></li>
-            <li class="nav-item"><a href="{{route('register')}}" class="btn btn-outline-primary">Register</a></li>
+            {{-- <li class="nav-item"><a href="{{route('register')}}" class="btn btn-outline-primary">Register</a></li> --}}
             @else
+            <li class="nav-item"><a href="{{route('register')}}" class="btn btn-outline-primary">Register</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{auth()->user()->name}}
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Settings</a>
+                {{-- <a class="dropdown-item" href="#">Settings</a> --}}
                 <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

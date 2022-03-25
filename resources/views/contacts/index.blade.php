@@ -171,6 +171,7 @@ a:hover{
                       <th scope="col">Age</th>
                       <th scope="col">Description</th>
                       <th scope="col">Action</th>
+                      <th scope="col">Doctor</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -184,6 +185,7 @@ a:hover{
                       <td>{{$contact->address}}</td>
                       <td>{{$contact->age}}</td>
                       <td>{{$contact->description}}</td>
+                      <td></td>
                       <td width="150"> 
                         {{-- <a href="show.html" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a> --}}
                         <a href="{{ route('contacts.edit',$contact->id) }}" class="btn btn-sm btn-circle btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></a>

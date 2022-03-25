@@ -12,7 +12,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 $row = null;
 $query = "SELECT * FROM appointement";                   
 $result = mysqli_query($conn,$query);
-
+$row = mysqli_fetch_assoc($result)
 ?>
 <title>Appointement</title>
 

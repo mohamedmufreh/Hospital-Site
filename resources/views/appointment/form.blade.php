@@ -2,6 +2,16 @@
 @section('content')
 
 <div class="container-form">
+	<center>
+		@if(Session::has('msg')) 
+			<div style="background-color: bisque; width: 20%; margin:auto; border-radius: 15px;"><h2 style="display: block;
+			  font-size: 1.5em;
+			  margin-top: 0.83em;
+			  margin-bottom: -1em;
+			  padding:8px;
+			  font-weight: bold;" >{{Session::get('msg')}}</h2></div>
+		@endif
+	</center>
 	<form method="POST" action="{{Route('appoint.store')}}">
 		@csrf      
 	  <div class="title">
@@ -52,8 +62,13 @@
 	  margin-top:-45px;
 	  margin-left: 45px;
 	}
-	.navMenu {
-	  /* background-color: #a34040; */
+	.nav-item{
+		display: none;
+	}
+	.navbar .dropdown-menu{
+		display: none;
+		/* max-height: 30px;
+		margin-bottom: 10px; */
 	}
 	
 	.navMenu a {

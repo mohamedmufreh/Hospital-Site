@@ -20,11 +20,18 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/index', function () {
+    return view('index');
+});
+
 
 Route::get('/covid', function () {
     return view('covid');
 });
 
+Route::get('/team', function () {
+    return view('ourteam');
+});
 // Route::get('/appoint', function () {
 //     return view('appointment');
 
@@ -59,4 +66,7 @@ Route::delete('appoint/{id}', [AppointController::class, 'delete'])->name('appoi
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
-//  Route::get('/register', [App\Http\Controllers\HomeController::class, 'auth.register'])->middleware('auth');
+Route::get('/register', [App\Http\Controllers\HomeController::class, 'reg'])->name('register')->middleware('auth');
+Route::post('/register', [App\Http\Controllers\HomeController::class, 'store'])->name('register.store')->middleware('auth');
+
+

@@ -18,7 +18,7 @@
   background: rgba(0, 0, 0, 0.8); /* Black see-through */
   color: #f1f1f1;
   width: 100%;
-  height: 90.88vh;
+  height: 100vh;
   /* transition: .5s ease; */
   color: white;
 }
@@ -1053,6 +1053,12 @@
 </g>
 </svg>
       
+  </div>
+  {{-- ------------------------------------- --}}
+  <div class="pic4">
+    <h2 class="advise1"> (4) More Information From WHO Organiztion About covid-19 </h2><br>
+    <a class="advise1" href="{{url('https://www.who.int/ar/emergencies/diseases/novel-coronavirus-2019')}}">WWW.WHO.com</a>
+    {{-- <img  class="img1" src="images/pic1.png" > --}}
   </div>
 </div>
 </div>

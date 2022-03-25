@@ -10,7 +10,10 @@
     /*background-repeat: no-repeat;*/
     position: relative;
 }
-
+.home .btn{
+        margin: auto;
+        margin-bottom: 40px; 
+}
 </style>
 		  <!-- *****************************************************************************
 ********************************* page 1 **********************************************
@@ -22,9 +25,12 @@
                                We Care For Your Health Every Moment And
                                 Provide High Solutions.
                             </p>
-                            <input  type="button" onclick="location.href='{{route('home')}}'" class="btn button-start hover-opacity" value="Get Started !">
-                            <input  type="button" onclick="location.href='{{route('appoint.index')}}'" class="btn button-start hover-opacity" value="Book Appointment">
-                            {{-- <button class="btn button-book hover-opacity" href="#" data-scroll="book"">Book Appointment</button> --}}
+                            <input  type="button" onclick="location.href='{{url('https://daralshefa.com/medical-advices/')}}'" class="btn button-start hover-opacity" value="Take care of yourself" style="background-color: #327616">
+                            <input  type="button" onclick="location.href='{{route('appoint.create')}}'" class="btn button-start hover-opacity" value="Book your vaccination">
+                            {{-- @auth
+                            <input  type="button" onclick="location.href='{{route('register')}}'" class="btn button-start hover-opacity" value="Add New User" style="background-color: #327616">
+                            @endauth --}}
+                            
                     </div> <!--   ./home-content -->
             </div> <!--   ./over -->
        </div> <!--   ./home -->

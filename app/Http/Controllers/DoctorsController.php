@@ -87,8 +87,12 @@ class DoctorsController extends Controller
             return view('filter',['filteredusers'=>$filteredusers]);
         }
         else{
-            return redirect('doctors.index')->with('msg','Not Result Founded...');
+            return redirect()->route('doctors.index')->with('msg','No Result Founded...');
         }
+        if(isset($filteredusers) && $filteredusers->count()){
+            return redirect()->route('doctors.index')->with('msg','No Result Founded...');
+        }   
+        
     }
 
 }

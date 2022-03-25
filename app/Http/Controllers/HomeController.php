@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\user;
 class HomeController extends Controller
 {
     /**
@@ -24,5 +24,19 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function reg()
+    {
+        return view('auth.register');
+    }
+    public function store()
+    {
+        $data = request()->all();
+        user::create([
+            'name'      =>$data['name'],
+            'email'     =>$data['email'],
+            'password'  =>$data['password'],
+        ]);
+        return redirect('home')->with('msg','New User Added...');
     }
 }

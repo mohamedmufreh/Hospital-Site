@@ -60,6 +60,6 @@ class AppointController extends Controller
             // header('Location: appoint-index.blade.php');
             // exit;
         }
-        return redirect('appoint')->with('msg','New Appointment Added...');
+        return redirect('appoint/create')->with('msg','New Appointment Added...');
    }
 }
