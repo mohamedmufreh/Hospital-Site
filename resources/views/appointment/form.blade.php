@@ -1,6 +1,13 @@
 @extends('layout')
 @section('content')
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "hospital";
 
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+?>
 <div class="container-form">
 	<center>
 		@if(Session::has('msg')) 
@@ -25,6 +32,23 @@
 			<textarea class="feedback-input" name="description" placeholder="More Information about your condition"></textarea>
 			<label style="color:#fff; font-weight:500;">Select Date</label>
 			<input class="feedback-input" name="appointement_date" type="date" required>
+			{{-- ///////////////////////////////////////////////////////////////////////// --}}
+			<select id="doc_id" name="doc_id" class="form-control feedback-input" style="color:white; background-color:#0000008c;">
+			<?php
+                $address_check = "SELECT * FROM doctors ";
+                $result = mysqli_query($conn, $address_check);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <option value="<?php echo $row['id']; ?>"><?php echo $row['first_name']." ".$row['last_name']." - ".$row['specalist']; ?></option>
+                <?php
+                    }
+                } else {
+                    echo "0 results";
+                }
+                ?>
+
+			</select>
+			{{-- //////////////////////////////////////////// --}}
 			<button type="submit" class="fade" name="add_appointement">Book An Appointment</button>		  			
 		</div>  
 	</form>
